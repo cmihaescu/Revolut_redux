@@ -1,0 +1,26 @@
+.landing-page {
+    width: 90%;
+    margin:3% auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+ }
+
+.navigation {
+    width:75%;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 3% auto;
+    justify-content: space-around;
+}
+
+.navigation-button {
+    cursor: pointer;
+    padding: 10px;
+    border: solid 2px #000;
+    border-radius: 20px;;
+    width:150px;
+    text-align: center;
+    font-weight: 700;
+}
