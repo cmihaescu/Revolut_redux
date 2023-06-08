@@ -1,0 +1,24 @@
+button {
+    margin: 0px 10px;
+    font-weight: 400;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border: 0px;
+    cursor: pointer;
+  }
+  .incrementButton {
+    background-color: rgb(6, 172, 0);
+  }
+  .decrementButton {
+    background-color: rgb(221, 52, 66);
+  }
+  .decrementButton:disabled {
+    background-color: rgb(193, 191, 191);
+    cursor: not-allowed;
+  }
+  .cart {
+    text-align: center;
+  }
