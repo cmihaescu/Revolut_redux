@@ -4,7 +4,7 @@ const initialState = {
   numOfItems: 0,
 };
 
-export const cartReducer = (state = initialState, action) => {
+export const cartSlice = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM:
       return {

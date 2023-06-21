@@ -1,11 +1,16 @@
 import React from 'react';
 import Navigation from './Navigation';
+import { useDispatch, useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoIosLogIn } from "react-icons/io";
+import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
+import { logIn, logOut } from "../actions/reducersActions"
 import "../CSS/LandingPage.css"
 import Cart from './Cart';
 
 function LandingPage() {
+
+    const state = useSelector((state) => state)
+    const dispatch = useDispatch();
 
     let totalAmount = "0,00";
     let currency = "USD";
@@ -18,8 +23,8 @@ function LandingPage() {
                 <div className='cart-and-logout-icons'>
                     <div className='cart'>
                         <span className='cart-text'>
-                            {totalAmount} &ensp; 
-                            {currency} &ensp; 
+                            {totalAmount} &ensp;
+                            {currency} &ensp;
                             <Cart />
                         </span>
                         <div className='tooltip'>
@@ -28,12 +33,22 @@ function LandingPage() {
                         </div>
                     </div>
                     <div className='logout-icon'>
-                        <div className='tooltip'>
-                            <IoIosLogIn />
-                            <span class="tooltiptext">Login</span>
-                        </div>
+                        {
+                            state.account.loggedIn ?
+                                <div style={{display:"flex", flexFlow:"row wrap", alignItems:"center"}}>
+                                    <div className='tooltip'>
+                                        <IoIosLogOut onClick={() => { dispatch(logOut()) }} />
+                                        <span class="tooltiptext">Logout</span>
+                                    </div>
+                                    <p style={{ fontSize: "15px"}}>Welcome {state.account.name}</p>
+                                </div> :
+                                <div className='tooltip'>
+                                    <IoIosLogIn onClick={() => { dispatch(logIn()) }} />
+                                    <span class="tooltiptext">Login</span>
+                                </div>
+                        }
                     </div>
-                
+
                 </div>
             </div>
             <Navigation>

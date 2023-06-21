@@ -5,7 +5,6 @@ import Account from "./Account";
 import "../CSS/PageContent.css"
 
 function PageContent(selectedTab){
-    console.log("selectedTab", selectedTab)
 
     return(
         <div className="page-content">
