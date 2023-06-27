@@ -1,16 +1,16 @@
 import React from "react";
 import "../../CSS/Cart.css"
-import { useDispatch, useSelector } from "react-redux";
-import { addItem, deleteItem } from "../../actions/reducersActions"
+import {  useSelector } from "react-redux";
 
 function Cart() {
     const state = useSelector((state) => state);
-    const dispatch = useDispatch();
-
     return (
-        <div className="cart">
+        <div className="">
             <p>Your cart:</p>
             <p>{state.cart.numOfItems} items</p>
+            <ul>{state.cart.items.map((item)=>{
+               return <li>{item}</li> 
+            })}</ul>
             {/* <button
                 onClick={() => { dispatch(addItem()) }}
                 className="incrementButton">Add item</button>

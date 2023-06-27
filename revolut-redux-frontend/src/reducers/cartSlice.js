@@ -13,6 +13,8 @@ export const cartSlice = (state = initialState, action) => {
       return {
         ...state,
         numOfItems: state.numOfItems + 1,
+        items:state.items.concat(action.payload.name),
+        totalAmount:Number(state.totalAmount)+Number(action.payload.price)
       };
 
     case DELETE_ITEM:

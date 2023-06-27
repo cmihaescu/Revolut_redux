@@ -19,7 +19,7 @@
 }
 
 .product-div:hover {
-    background-color: rgba(0, 112, 24, 0.2)
+    background-color: rgba(82, 82, 82, 0.2)
 }
 
 .currency-dropdown {
@@ -46,4 +46,8 @@
 .add-to-cart-button:hover{
     color: #fff;
     background-color: #000;
+}
+.add-to-cart-button:active {
+    color:#fff;
+    background-color: rgb(107, 107, 107);
 }

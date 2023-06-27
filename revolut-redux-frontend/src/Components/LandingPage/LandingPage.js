@@ -5,10 +5,10 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
 import { logOut, setTabAccount } from "../../actions/reducersActions"
 import "../../CSS/LandingPage.css"
-import Cart from '../Cart/Cart';
+import Cart from '../Cart/Cart.js';
 
 function LandingPage() {
-    const[isHovering, setIsHovering] = useState(false)
+    const [isHovering, setIsHovering] = useState(false)
     const state = useSelector((state) => state)
     const dispatch = useDispatch();
     const logoutState = {
@@ -34,11 +34,11 @@ function LandingPage() {
                             {currency} &ensp;
                         </span>
                         <div
-                        onMouseOver={()=> setIsHovering(true)}
-                        onMouseOut={()=> setIsHovering(false)}
-                        className='tooltip'>
+                            onMouseOver={() => setIsHovering(true)}
+                            onMouseOut={() => setIsHovering(false)}
+                            className='cartIcon'>
                             <FaShoppingCart />
-                            {isHovering && <div className='tooltiptext'><Cart /></div>}
+                            {isHovering?<Cart />:""}
                         </div>
                     </div>
                     <div className='logout-icon'>
@@ -46,7 +46,7 @@ function LandingPage() {
                             state.account.loggedIn ?
                                 <div style={{ display: "flex", flexFlow: "row wrap", alignItems: "center" }}>
                                     <div className='tooltip'>
-                                        <IoIosLogOut onClick={() => { dispatch(logOut(logoutState));console.log("accountSlice state", state.account) }} />
+                                        <IoIosLogOut onClick={() => { dispatch(logOut(logoutState));}} />
                                         <span class="tooltiptext">Logout</span>
                                     </div>
                                     <p style={{ fontSize: "15px" }}>Welcome {state.account.name}</p>

@@ -11,20 +11,19 @@
     cursor:not-allowed;
 }
 
-.tooltip {
-    position: relative;
-    cursor: pointer;
-  }
-  
 input {
     display: block;
     width: 100%;
 }
-  
+
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 80px;
     background-color: #555;
+    width: 80px;
     color: #fff;
     text-align: center;
     border-radius: 6px;
