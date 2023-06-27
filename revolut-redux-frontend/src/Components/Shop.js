@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateCurrency } from "../actions/reducersActions";
 import "../CSS/Shop.css"
 
 
@@ -80,14 +82,16 @@ import "../CSS/Shop.css"
             variants: ["Logitech", "Asus", "Philips"]
         }
     ];
-    function Shop() {
-        const [selectedCurrency, setSelectedCurrency] = useState("EUR")
-    
 
+    function Shop() {
+        const state = useSelector((state) => state)
+        const dispatch = useDispatch();
+        let currency = state.cart.currency
+    
     return (
         <div>
             <div className="currency-dropdown">Currency: &ensp;
-                <select name="currency" id="currency" onChange={currency => setSelectedCurrency(currency.target.value)}>
+                <select name="currency" id="currency" onChange={currency => dispatch(updateCurrency(currency.target.value))}>
                     <option value="EUR">EUR</option>
                     <option value="USD">USD</option>
                     <option value="GBP">GBP</option>
@@ -124,7 +128,7 @@ import "../CSS/Shop.css"
                             </div>
                             <div className="product-details">
                                 <h2>{product.name}</h2>
-                                <h4>Price: {product.price}	&ensp; {selectedCurrency} </h4>
+                                <h4>Price: {product.price}	&ensp; {currency} </h4>
                                 <p>{product.description}</p>
                                 <div className="variants-and-add-to-cart-button">
                                     <div>

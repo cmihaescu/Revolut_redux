@@ -1,4 +1,6 @@
-import { ADD_ITEM, DELETE_ITEM, LOG_IN, LOG_OUT } from "../actionTypes/actionTypes";
+import { ADD_ITEM, DELETE_ITEM, LOG_IN, LOG_OUT, HOME, ACCOUNT, SHOP, REGISTERED, UPDATE_CURRENCY } from "../actionTypes/actionTypes";
+
+    //CART//
 
 const addItem = () => {
   return {
@@ -12,6 +14,22 @@ const deleteItem = () => {
   };
 };
 
+const updateCurrency = (payload) => {
+  return {
+    type:UPDATE_CURRENCY,
+    payload
+  }
+}
+
+    //ACCOUNT//
+
+const register = (payload) => {
+  return {
+    type: REGISTERED,
+    payload
+  }
+}
+
 const logIn = (payload) => {
   return {
     type: LOG_IN,
@@ -19,10 +37,31 @@ const logIn = (payload) => {
   }
 }
 
-const logOut = () => {
+const logOut = (payload) => {
   return {
-    type: LOG_OUT
+    type: LOG_OUT,
+    payload
   }
 }
 
-export { addItem, deleteItem, logIn, logOut };
+    //NAVIGATION//
+
+const setTabHome = () => {
+  return {
+    type: HOME
+  }
+}
+
+const setTabAccount = () => {
+  return {
+    type: ACCOUNT
+  }
+}
+
+const setTabShop = () => {
+  return {
+    type: SHOP
+  }
+}
+
+export { addItem, deleteItem, updateCurrency, register, logIn, logOut, setTabHome, setTabAccount, setTabShop };

@@ -1,7 +1,7 @@
 import './App.css';
 import { Provider } from "react-redux";
 import store from "./store";
-import LandingPage from './Components/LandingPage';
+import LandingPage from './Components/LandingPage/LandingPage';
 
 function App() {
   return (

@@ -1,26 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import '../CSS/Navigation.css'
 import PageContent from "./PageContent";
+import { useDispatch, useSelector } from "react-redux";
+import { setTabAccount, setTabHome, setTabShop } from "../actions/reducersActions"
 
 function Navigation() {
-    const [selectedTab, setSelectedTab] = useState("Home");
-
-
+    const state = useSelector((state) => state);
+    const dispatch = useDispatch();
 
     return (
         <div className="landing-page">
             <div className="navigation">
-                <div onClick={() => setSelectedTab("home")} className="navigation-button">
+                <div onClick={() => { dispatch(setTabHome())}} className="navigation-button">
                     Home
                 </div>
-                <div onClick={() => setSelectedTab("account")} className="navigation-button">
+                <div onClick={() => {dispatch(setTabAccount())}} className="navigation-button">
                     My Account
                 </div>
-                <div onClick={() => setSelectedTab("shop")} className="navigation-button">
+                <div onClick={() => {dispatch(setTabShop())}} className="navigation-button">
                     Shop
                 </div>
             </div>
-            <PageContent selectedTab={selectedTab}/>
+            <PageContent selectedTab={state.websiteState.displayedPage} />
         </div>
     )
 }

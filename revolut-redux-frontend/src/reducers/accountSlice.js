@@ -2,9 +2,10 @@ import { LOG_IN, LOG_OUT } from "../actionTypes/actionTypes";
 
 
 const initialState = {
-    name: "Cornel",
+    name: "",
     email: "",
     password: "",
+    customer_id:"",
     loggedIn: false
 }
 
@@ -15,15 +16,11 @@ export const accountSlice = (state = initialState, action) => {
                 ...state,
                 name: action.payload.name,
                 email: action.payload.email,
+                customer_id:action.payload.customer_id,
                 loggedIn: true
             };
         case LOG_OUT:
-            return {
-                name: "",
-                email: "",
-                password: "",
-                loggedIn: false
-            }
+            return action.payload
         default:
             return state;
     }

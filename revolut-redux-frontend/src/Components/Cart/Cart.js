@@ -1,7 +1,7 @@
 import React from "react";
-import "../CSS/Cart.css"
+import "../../CSS/Cart.css"
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, deleteItem } from "../actions/reducersActions"
+import { addItem, deleteItem } from "../../actions/reducersActions"
 
 function Cart() {
     const state = useSelector((state) => state);
@@ -9,14 +9,15 @@ function Cart() {
 
     return (
         <div className="cart">
+            <p>Your cart:</p>
             <p>{state.cart.numOfItems} items</p>
-            <button
+            {/* <button
                 onClick={() => { dispatch(addItem()) }}
                 className="incrementButton">Add item</button>
             <button
                 onClick={() => { dispatch(deleteItem()) }}
                 disabled={state.cart.numOfItems > 0 ? false : true}
-                className="decrementButton">Remove item</button>
+                className="decrementButton">Remove item</button> */}
         </div>
     )
 }

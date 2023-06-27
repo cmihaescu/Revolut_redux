@@ -1,19 +1,19 @@
 import React from "react";
 import {Shop} from "./Shop";
 import Home from "./Home";
-import Account from "./Account";
+import Account from "./Account/Account.js";
 import "../CSS/PageContent.css"
 
 function PageContent(selectedTab){
-
+    
     return(
         <div className="page-content">
             {
-                selectedTab.selectedTab === "home"
+                selectedTab.selectedTab === "Home"
                 ? <Home />
-                : selectedTab.selectedTab === "account"
+                : selectedTab.selectedTab === "Account"
                 ? <Account />
-                : selectedTab.selectedTab === "shop"
+                : selectedTab.selectedTab === "Shop"
                 ? <Shop />
                 : ""
             }
