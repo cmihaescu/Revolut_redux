@@ -18,9 +18,19 @@
 .navigation-button {
     cursor: pointer;
     padding: 10px;
+    margin: 10px;
     border: solid 2px #000;
     border-radius: 20px;;
     width:150px;
     text-align: center;
     font-weight: 700;
+}
+
+.navigation-button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.navigation-button:active {
+    background-color: #7e7e7e;
 }

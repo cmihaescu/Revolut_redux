@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navigation from '../Navigation';
 import { useDispatch, useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
-import { logOut, setTabAccount } from "../../actions/reducersActions"
+import { logOut, setTabAccount, setTabCart } from "../../actions/reducersActions"
 import "../../CSS/LandingPage.css"
-import Cart from '../Cart/Cart.js';
 
 function LandingPage() {
-    const [isHovering, setIsHovering] = useState(false)
     const state = useSelector((state) => state)
     const dispatch = useDispatch();
     const logoutState = {
@@ -33,12 +31,11 @@ function LandingPage() {
                             {totalAmount} &ensp;
                             {currency} &ensp;
                         </span>
-                        <div
-                            onMouseOver={() => setIsHovering(true)}
-                            onMouseOut={() => setIsHovering(false)}
-                            className='cartIcon'>
+                        <div className='tooltip'
+                            onClick={() => {dispatch(setTabCart())}}
+                            >
                             <FaShoppingCart />
-                            {isHovering?<Cart />:""}
+                            <span class="tooltiptext">Click to go to cart</span>
                         </div>
                     </div>
                     <div className='logout-icon'>

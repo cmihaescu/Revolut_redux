@@ -1,4 +1,4 @@
-import { HOME, ACCOUNT, SHOP, REGISTERED } from "../actionTypes/actionTypes";
+import { HOME, ACCOUNT, SHOP, CART, REGISTERED } from "../actionTypes/actionTypes";
 
 const initialState = {
     registered: false,
@@ -13,6 +13,8 @@ export const websiteStateSlice = (state = initialState, action) => {
             return { ...state, displayedPage: "Account" }
         case SHOP:
             return { ...state, displayedPage: "Shop" }
+        case CART:
+            return {...state, displayedPage: "Cart"}
         case REGISTERED:
             return { ...state, registered: action.payload }
         default:

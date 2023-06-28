@@ -1,4 +1,4 @@
-import { ADD_ITEM, DELETE_ITEM, LOG_IN, LOG_OUT, HOME, ACCOUNT, SHOP, REGISTERED, UPDATE_CURRENCY } from "../actionTypes/actionTypes";
+import { ADD_ITEM, DELETE_ITEM, LOG_IN, LOG_OUT, HOME, ACCOUNT, SHOP, REGISTERED, UPDATE_CURRENCY, CART } from "../actionTypes/actionTypes";
 
     //CART//
 
@@ -66,4 +66,10 @@ const setTabShop = () => {
   }
 }
 
-export { addItem, deleteItem, updateCurrency, register, logIn, logOut, setTabHome, setTabAccount, setTabShop };
+const setTabCart = () => {
+  return {
+    type: CART
+  }
+}
+
+export { addItem, deleteItem, updateCurrency, register, logIn, logOut, setTabHome, setTabAccount, setTabShop, setTabCart };
