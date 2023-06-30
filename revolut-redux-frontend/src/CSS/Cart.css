@@ -27,3 +27,31 @@ button {
   align-items: center;
   padding: 2%;
 }
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* QUANTIFIER COMPONENT CSS */
+
+.quantifier {
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  width: auto;
+  padding-bottom: 3%;
+}
+
+.quantifier img,
+.quantifier button {
+  height: 2rem;
+  background-color: #fff;
+}
+
+.quantity-input{
+  min-width: 1rem;
+  margin-top: 8px;
+  text-align: center;
+}

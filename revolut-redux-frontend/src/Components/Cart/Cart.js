@@ -3,6 +3,7 @@ import "../../CSS/LandingPage.css"
 import "../../CSS/Cart.css"
 import { useDispatch, useSelector } from "react-redux";
 import { setTabShop } from "../../actions/reducersActions";
+import { Quantifier } from "./Quantifier";
 
 function Cart() {
     const dispatch = useDispatch();
@@ -16,7 +17,10 @@ function Cart() {
                 <p>Your cart:</p>
                 <p>{numOfItems} items</p>
                 <ul>{items.map((item) => {
-                    return <li>{item}</li>
+                    return <div className="cartItems">
+                            <li key={item.id}>{item.name}</li>
+                            <Quantifier product={item}/>
+                           </div>
                 })}</ul>
                 <p>Total amount: {totalAmount} {currency}</p>
             </div>
