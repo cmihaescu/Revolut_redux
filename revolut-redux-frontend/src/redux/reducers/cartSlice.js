@@ -14,7 +14,6 @@ export const cartSlice = (state = initialState, action) => {
         ...state,
         numOfItems: state.numOfItems + 1,
         items:state.items.concat(action.payload.name),
-        items:state.items.concat(action.payload),
         totalAmount:Number(state.totalAmount)+Number(action.payload.price)
       };
 

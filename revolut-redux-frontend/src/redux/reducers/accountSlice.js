@@ -1,4 +1,4 @@
-import { LOG_IN, LOG_OUT } from "../actionTypes/actionTypes";
+import { LOG_IN, LOG_OUT } from "../actionTypes/actionTypes.js";
 
 
 const initialState = {

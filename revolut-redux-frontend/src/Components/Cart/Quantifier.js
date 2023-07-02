@@ -1,15 +1,18 @@
+import { useSelector } from "react-redux";
 import React, { useState } from "react";
-import "../../CSS/Cart.css"
+import "./Cart.css"
 
-export const Quantifier = (product) => {
+export const Quantifier = (props) => {
+    const state = useSelector((state) => state)
     const [quantity, setQuantity] = useState(1)
     const [buttonDisable, setButtonDisable] = useState(false)
     let inputWidth = quantity.toString().length+"rem"
-    console.log(inputWidth)
+    const {price} = props.product
+    const {currency} = state.cart
 
     return (
         <div>
-            <p>{product.product.price}</p>
+            <p>{price} {currency}</p>
             <div className="quantifier">
                 <button
                     className="plus-minus-button"

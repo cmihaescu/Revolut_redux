@@ -1,5 +1,5 @@
 import React from "react";
-import "../../CSS/Account/Account.css"
+import "./Account.css"
 import { useSelector } from "react-redux";
 import {Register, Login, AccountPage} from "./AccountFunctions"
 

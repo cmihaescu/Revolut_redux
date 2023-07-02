@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, updateCurrency } from "../actions/reducersActions";
-import "../CSS/Shop.css"
+import { addItem, updateCurrency } from "../../redux/actions/reducersActions.js";
+import "./Shop.css"
 
 
 

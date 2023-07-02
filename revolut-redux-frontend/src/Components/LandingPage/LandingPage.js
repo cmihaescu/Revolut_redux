@@ -1,10 +1,10 @@
 import React from 'react';
-import Navigation from '../Navigation';
 import { useDispatch, useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
-import { logOut, setTabAccount, setTabCart } from "../../actions/reducersActions"
-import "../../CSS/LandingPage.css"
+import Navigation from '../../navigation/navigation/Navigation.js';
+import { logOut, setTabAccount, setTabCart } from "../../redux/actions/reducersActions.js"
+import "./LandingPage.css"
 
 function LandingPage() {
     const state = useSelector((state) => state)

@@ -1,8 +1,8 @@
 import React from "react";
-import '../CSS/Navigation.css'
-import PageContent from "./PageContent";
+import './Navigation.css'
 import { useDispatch, useSelector } from "react-redux";
-import { setTabAccount, setTabHome, setTabShop } from "../actions/reducersActions"
+import PageContent from "../../navigation/pageContent/PageContent.js";
+import { setTabAccount, setTabHome, setTabShop } from "../../redux/actions/reducersActions.js"
 
 function Navigation() {
     const state = useSelector((state) => state);

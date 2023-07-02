@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { logIn } from "../../actions/reducersActions";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../actions/reducersActions";
-import "../../CSS/Account/Account.css"
+import { register, logIn } from "../../redux/actions/reducersActions.js";
+import "./Account.css"
 
 const Register = () => {
 

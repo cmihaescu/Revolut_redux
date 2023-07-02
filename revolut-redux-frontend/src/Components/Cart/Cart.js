@@ -1,8 +1,7 @@
 import React from "react";
-import "../../CSS/LandingPage.css"
-import "../../CSS/Cart.css"
+import "./Cart.css"
 import { useDispatch, useSelector } from "react-redux";
-import { setTabShop } from "../../actions/reducersActions";
+import { setTabShop } from "../../redux/actions/reducersActions.js";
 import { Quantifier } from "./Quantifier";
 
 function Cart() {

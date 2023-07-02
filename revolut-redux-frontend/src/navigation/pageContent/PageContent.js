@@ -1,9 +1,9 @@
 import React from "react";
-import {Shop} from "./Shop";
-import Home from "./Home";
-import Account from "./Account/Account.js";
-import Cart from "./Cart/Cart";
-import "../CSS/PageContent.css"
+import {Shop} from "../shop/Shop.js";
+import Home from "../home/Home.js";
+import Account from "../../Components/Account/Account.js";
+import Cart from "../../Components/Cart/Cart.js";
+import "./PageContent.css"
 
 function PageContent(selectedTab){
     
