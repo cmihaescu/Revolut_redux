@@ -1,8 +1,8 @@
 import React from "react";
 import "./Cart.css"
 import { useDispatch, useSelector } from "react-redux";
-import { setTabShop } from "../../redux/actions/reducersActions.js";
 import { Quantifier } from "./Quantifier";
+import { Link } from "react-router-dom";
 
 function Cart() {
     const dispatch = useDispatch();
@@ -24,12 +24,9 @@ function Cart() {
                 <p>Total amount: {totalAmount} {currency}</p>
             </div>
             <div className="cartButtons">
-                <div
-                    className="navigation-button"
-                    onClick={() => dispatch(setTabShop())}
-                >
+                <Link className="navigation-button" to="/shop" >
                     Shop some more!
-                </div>
+                </Link>
                 <div
                     className="navigation-button"
                     onClick={() => console.log("implement checkout page")}
